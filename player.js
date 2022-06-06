@@ -56,18 +56,18 @@ class Player {
       this.x += this.vx;
       this.y += this.vy;
 
-
   
       this.tick++;
 
       
   
-      if (this.tick > 10 && this.ay) {
+      if (this.tick > 10) {
        this.tick = 0;
-        this.img.frame++;
+       console.log("animando")
+        this.img.frameIndex++;
   
-        if (this.img.frame > 2) {
-          this.img.frame = 0;
+        if (this.img.frameIndex >= this.img.frames) {
+          this.img.frameIndex = 0;
         }
       } 
 
