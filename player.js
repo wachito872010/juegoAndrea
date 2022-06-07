@@ -63,7 +63,7 @@ class Player {
   
       if (this.tick > 10) {
        this.tick = 0;
-       console.log("animando")
+      
         this.img.frameIndex++;
   
         if (this.img.frameIndex >= this.img.frames) {

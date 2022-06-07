@@ -14,21 +14,30 @@ class Game {
     }
   
     start() {
-      this.interval = setInterval(() => {
-        this.clear();
-        this.draw();
-        this.move();
-        this.checkCollisions();
-    
-        
+         this.interval = setInterval(() => {
+         this.clear();
+         this.draw();
+         this.move();
+         this.checkCollisions();
+         this.tick++;
 
-        this.tick++;
+            if (this.tick > Math.random() * 200 + 100) {
+            this.tick = 0;
+             this.addEnemy();
+            }
 
-      if (this.tick > Math.random() * 200 + 100) {
-        this.tick = 0;
-        this.addEnemy();
-      }
-      }, 1000 / 60);
+            if (this.tick > Math.random() * 200 + 100) {
+                this.tick = 0;
+                 this.addEnemy2();
+            }
+
+            if (this.tick > Math.random() * 200 + 100) {
+                    this.tick = 0;
+                     this.addEnemy3();
+            }     
+
+
+        }, 1000 / 60);
     }
   
     stop() {
@@ -40,11 +49,21 @@ class Game {
         const enemy = new Enemy(this.ctx);
         this.enemies.push(enemy);
     }
+    addEnemy2() {
+        const enemy = new Enemy2(this.ctx);
+        this.enemies.push(enemy);
+    }
+
+    addEnemy3() {
+        const enemy = new Enemy3(this.ctx);
+        this.enemies.push(enemy);
+    }
   
   
     clear() {
       this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
       this.enemies = this.enemies.filter((e) => e.isVisible());
+
     }
   
     draw() {
@@ -57,8 +76,7 @@ class Game {
     this.bg.move();
     this.player.move();
     this.enemies.forEach((e) => e.move());
-
-      
+       
     }
 
 

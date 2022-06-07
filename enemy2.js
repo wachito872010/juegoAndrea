@@ -1,5 +1,5 @@
-class Enemy {
-
+class Enemy2 {
+     
     constructor(ctx) {
         this.ctx = ctx;
         this.x = this.ctx.canvas.width;
@@ -16,7 +16,7 @@ class Enemy {
         this.img = new Image();
         this.img.frames = 3;
         this.img.frameIndex = 0;
-        this.img.src = './img/malo1.png'
+        this.img.src = './img/malo2.png'
         
   
         this.tick = 0;
@@ -73,3 +73,4 @@ class Enemy {
           return colX && colY;
     }
 }
+  
