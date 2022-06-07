@@ -4,6 +4,7 @@ class Game {
       
       this.player = new Player(ctx);
       this.bg = new Background(ctx);
+      this.hearts = [];
   
       this.enemies = [];
   
@@ -14,6 +15,7 @@ class Game {
     }
   
     start() {
+        this.addHearts()
          this.interval = setInterval(() => {
          this.clear();
          this.draw();
@@ -70,6 +72,7 @@ class Game {
       this.bg.draw();
       this.player.draw();
       this.enemies.forEach((e) => e.draw());
+      this.hearts.forEach((e) => e.draw())
     }
   
     move() {
@@ -94,12 +97,26 @@ class Game {
       checkCollisions() {
         this.enemies.forEach((e) => {
           if (e.collides(this.player)) {
-            //this.gameOver();
+            this.gameOver();
           }
         });
-
-        
       }
+
+      gameOver(){
+          clearInterval(this.interval)
+          console.log("colision")
+      }
+
+      addHearts() {
+      for (let row = 0; row < 1; row++) {
+          for (let col = 0; col < 3; col++) {
+              console.log(col, row, "aqui¨")
+              const heart = new Heart(this.ctx, col * 25 + 625, row * 25 + 550)           
+              this.hearts.push(heart)
+          }
+      }
+
+    }
   
 
   }

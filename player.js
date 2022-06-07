@@ -23,6 +23,7 @@ class Player {
       this.tick = 0;
   
       this.bullets = [];
+    
 
      
     }
@@ -158,6 +159,16 @@ class Player {
 
     this.bullets.push(bullet);
   }
+
+
+  collides(player) {
+    const colX =
+      this.x <= player.x + player.w - 20 && this.x + this.w > player.x;
+    const colY = this.y + this.h > player.y && this.y < player.y + player.h;
+
+    return colX && colY;
+}
+
 
 
 }
