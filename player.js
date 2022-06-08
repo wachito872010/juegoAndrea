@@ -23,6 +23,8 @@ class Player {
       this.tick = 0;
   
       this.bullets = [];
+
+      this.audioBullet = new Audio("audio/laser.wav");
     
 
      
@@ -126,6 +128,7 @@ class Player {
 
         if (key === SPACE) {
         this.shoot();
+        
       }
   }
 
@@ -158,6 +161,7 @@ class Player {
     );
 
     this.bullets.push(bullet);
+    this.audioBullet.play();
   }
 
 

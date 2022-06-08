@@ -14,7 +14,7 @@ class Game {
       this.tick = 0;
 
 
-      this.audio = new Audio("audio/starwars.mp3");
+      this.audio = new Audio("audio/starwarslarga.mp3");
     }
   
     start() {

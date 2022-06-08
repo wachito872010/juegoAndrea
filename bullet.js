@@ -8,6 +8,8 @@ class Bullet {
   
       this.vx = 10;
       this.vy = 0;
+
+      
   
     }
   
