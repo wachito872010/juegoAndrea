@@ -18,6 +18,7 @@ class Enemy {
         this.img.frameIndex = 0;
         this.img.src = './img/malo1.png'
         
+        this.alive = true;
   
         this.tick = 0;
     }  
@@ -62,7 +63,7 @@ class Enemy {
     }
       
     isVisible() {
-          return this.x + this.w > 0;
+          return this.alive && this.x + this.w > 0;
     }
       
     collides(player) {

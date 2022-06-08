@@ -101,6 +101,12 @@ class Player {
         this.y = 0;
         this.vy = 0;
       }
+
+
+      this.bullets.forEach((bullet) => {
+        bullet.move();
+      });
+      this.bullets = this.bullets.filter((b) => b.isVisible());
       
 
     }

@@ -17,6 +17,8 @@ class Enemy3 {
         this.img.frames = 3;
         this.img.frameIndex = 0;
         this.img.src = './img/malo3.png'
+
+        this.alive = true;
         
   
         this.tick = 0;
@@ -62,7 +64,7 @@ class Enemy3 {
     }
       
     isVisible() {
-          return this.x + this.w > 0;
+      return this.alive && this.x + this.w > 0;
     }
       
     collides(player) {

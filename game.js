@@ -111,6 +111,14 @@ class Game {
           }
         }); 
 
+        this.enemies.forEach(e => {
+            this.player.bullets.forEach(b => {
+                if (b.collides(e)) { 
+                    e.alive = false
+                }
+            })
+        })
+
 
       }
 
