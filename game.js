@@ -12,9 +12,14 @@ class Game {
   
       this.setListeners()
       this.tick = 0;
+
+
+      this.audio = new Audio("audio/starwars.mp3");
     }
   
     start() {
+        this.audio.play();
+
         this.addHearts()
          this.interval = setInterval(() => {
          this.clear();
@@ -43,6 +48,9 @@ class Game {
     }
   
     stop() {
+       this.audio.pause();
+       clearInterval(this.interval);
+       this.interval = null;
       
     }
 
@@ -78,6 +86,7 @@ class Game {
     move() {
     this.bg.move();
     this.player.move();
+    this.hearts.forEach((e) => e.move());
     this.enemies.forEach((e) => e.move());
        
     }
@@ -96,15 +105,21 @@ class Game {
 
       checkCollisions() {
         this.enemies.forEach((e) => {
-          if (e.collides(this.player)) {
+          
+           if (e.collides(this.player)) {
             this.gameOver();
           }
-        });
+        }); 
+
+
       }
 
       gameOver(){
-          clearInterval(this.interval)
-          console.log("colision")
+        clearInterval(this.interval)
+        
+        this.stop();
+
+        this.enemies = [];
       }
 
       addHearts() {
