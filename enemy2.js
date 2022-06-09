@@ -4,8 +4,8 @@ class Enemy2 {
         this.ctx = ctx;
         this.x = this.ctx.canvas.width;
         this.y = Math.random() * this.ctx.canvas.height;
-        this.w = 45
-        this.h = 45
+        this.w = 58
+        this.h = 58
         this.vx = -5;
         this.vy = 0;
   

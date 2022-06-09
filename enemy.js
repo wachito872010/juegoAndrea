@@ -4,8 +4,8 @@ class Enemy {
         this.ctx = ctx;
         this.x = this.ctx.canvas.width;
         this.y = Math.random() * this.ctx.canvas.height;
-        this.w = 45
-        this.h = 45
+        this.w = 50
+        this.h = 50
         this.vx = -5;
         this.vy = 0;
   
@@ -22,6 +22,7 @@ class Enemy {
   
         this.tick = 0;
         this.tock = 0;
+    
     }  
       
     draw() {

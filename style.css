@@ -3,7 +3,7 @@ html, body {
     padding: 0;
 }
 body {
-    background-image: url(./img/espacio.jpg);
+    background-image: url(./img/espaciofondo.jpg);
     background-size: 100%
 }
 canvas {
