@@ -21,6 +21,7 @@ class Enemy {
         this.alive = true;
   
         this.tick = 0;
+        this.tock = 0;
     }  
       
     draw() {
@@ -39,12 +40,26 @@ class Enemy {
      }
       
     move() {
-      this.vy += this.ay;
-  
-      this.vx += this.ax;
+      //this.vy += this.ay;
+      //this.vx += this.ax;
   
       this.x += this.vx;
       this.y += this.vy;
+
+      if(this.x === 700){
+        this.vy +=1
+      }
+      if(this.x === 500){
+        this.vy -=2
+      }
+      if(this.x === 300){
+        this.vy +=2
+      }
+      if(this.x === 100){
+        this.vy -=2
+      }
+      
+      
 
   
       this.tick++;

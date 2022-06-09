@@ -40,16 +40,36 @@ class Enemy2 {
      }
       
     move() {
-      this.vy += this.ay;
-  
-      this.vx += this.ax;
-  
+
+      
       this.x += this.vx;
       this.y += this.vy;
 
-  
-      this.tick++;
-
+      if(this.x === 800){
+        this.vy -= 2
+      }
+      if(this.x === 700){
+        this.vy += 4
+      }
+      if(this.x === 600){
+        this.vy -= 6
+      }
+      if(this.x === 500){
+        this.vy += 5
+      }
+      if(this.x === 400){
+        this.vy -= 6
+      }
+      if(this.x === 300){
+        this.vy += 5
+      }
+      if(this.x === 200){
+        this.vy -= 6
+      }
+      if(this.x === 100){
+        this.vy += 5
+      }
+     
       
   
       if (this.tick > 10) {
