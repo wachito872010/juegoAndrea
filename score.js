@@ -5,10 +5,10 @@ class Score {
         this.y = 40
         this.value = 0
     }
-    //Press Start 2P
+    
     draw() {
-        this.ctx.font = "30px Arial"
-        //this.ctx.strokeStyle = 'red';
+        this.ctx.font = "25px Fantasy"
+        this.ctx.strokeStyle = 'Red';
         this.ctx.fillText(`Score: ${this.value}`, this.x, this.y)
     }
     

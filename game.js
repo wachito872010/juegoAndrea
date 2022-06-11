@@ -16,7 +16,6 @@ class Game {
     this.tick = 0;
 
     this.audio = new Audio("audio/starwarslarga.mp3");
-    //bajar vol.
 
     this.setUpHearts(3)
   }
@@ -24,6 +23,7 @@ class Game {
   start() {
     if (!this.interval){
         this.audio.play();
+        this.audio.volume = 0.2
 
         this.interval = setInterval(() => {
           this.clear();
