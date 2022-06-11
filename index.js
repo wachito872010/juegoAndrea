@@ -6,6 +6,8 @@ const game = new Game(ctx);
 const btn = document.getElementById("btn");
 
 btn.addEventListener("click", function () {
+  document.querySelector(".panel-menu").classList.add("hidden")
+  document.querySelector(".panel-canvas").classList.remove("hidden")
   if (game.interval) {
     game.stop();
     btn.innerText = "START";
@@ -13,4 +15,7 @@ btn.addEventListener("click", function () {
     game.start();
     btn.innerText = "STOP";
   }
-});
+}
+
+
+);

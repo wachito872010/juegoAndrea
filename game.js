@@ -151,7 +151,7 @@ class Game {
     this.ctx.font = "60px Roboto";
     this.ctx.strokeStyle = "Red";
     this.ctx.fillText(
-        `GAME OVER ${this.score.value}`,
+      `GAME OVER ${this.score.value}`,
       this.ctx.canvas.width * 0.24,
       this.ctx.canvas.height / 2
     );
@@ -164,4 +164,6 @@ class Game {
       this.hearts.push(new Heart(this.ctx, this.ctx.canvas.width - 55 * i, 20));
     }
   }
+
+
 }

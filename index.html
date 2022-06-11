@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,18 @@
     <link rel="stylesheet" href="/lab-game-andrea/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <canvas id="canvas" width="800" height="500"></canvas>
-<div>
-    <button id="btn">PLAY</button>
-    <div class="game-over" style="visibility: hidden;"> Perdiste </div>
-    
-</div>
+ <div class="panel-menu">
+     <p>hola</p>
+     <button id="btn">PLAY</button>
+ </div>   
+ 
+    <div class="panel-canvas hidden"> 
+        <canvas id="canvas" width="800" height="500"></canvas>
+        <button id="btn">PAUSE</button>
+
+    </div>
     <script src="./constants.js"></script>
     <script src="./score.js"></script>
     <script src="./heart.js"></script>
@@ -27,6 +33,5 @@
     <script src="./game.js"></script>
     <script src="./index.js"></script>
 </body>
+
 </html>
-
-

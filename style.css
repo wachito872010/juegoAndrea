@@ -6,10 +6,12 @@ body {
     background-image: url(./img/espaciofondo.jpg);
     background-size: 100%
 }
-canvas {
+canvas, .panel-menu {
     border: 5px solid white;
     margin: 100px auto 50px auto;
     display: block;
+    width: 800px;
+    height: 500px;
 }
 div{
     text-align: center;
@@ -18,4 +20,13 @@ button {
     padding: 10px 15px;
     font-weight: bold;
     letter-spacing: 2px;
+
+
+
+}
+.panel-menu{
+    color: red;
+}
+.hidden {
+    display: none;
 }
