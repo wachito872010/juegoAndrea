@@ -16,7 +16,8 @@ class Game {
     this.tick = 0;
 
     this.audio = new Audio("audio/starwarslarga.mp3");
-    //this.audiogo = new AudioGO ("audio/gameover.mp3");
+    this.audiogo = new Audio ("audio/gameover.mp3");
+    this.audioPain = new Audio("audio/ouch.wav");
 
     this.setUpHearts(3)
   }
@@ -108,6 +109,8 @@ class Game {
       if (enemy.collides(this.player)) {
         enemy.alive = false
         this.hearts.pop()
+        this.audioPain.play();
+        this.audioPain.volume = 0.5
         if (this.hearts.length === 0){
             this.gameOver()
         }
@@ -139,9 +142,10 @@ class Game {
     this.clear();
     this.draw();
     this.stop();
+    this.score.value = 0;
 
-    //this.audiogo.play();
-    //this.audiogo.volume = 0.2
+    this.audiogo.play();
+    //this.audiogo.volume = 0.4
 
     this.ctx.font = "60px Roboto";
     this.ctx.strokeStyle = 'Red';

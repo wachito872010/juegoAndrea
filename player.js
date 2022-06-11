@@ -25,7 +25,7 @@ class Player {
       this.bullets = [];
 
       this.audioBullet = new Audio("audio/laser.wav");
-    
+      
 
      
     }
@@ -178,6 +178,8 @@ class Player {
     const colY = this.y + this.h > player.y && this.y < player.y + player.h;
 
     return colX && colY;
+
+    
   }
 
 
