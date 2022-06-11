@@ -168,6 +168,7 @@ class Player {
 
     this.bullets.push(bullet);
     this.audioBullet.play();
+    this.audioBullet.volume = 0.4
   }
 
 

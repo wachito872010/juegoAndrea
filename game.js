@@ -16,6 +16,7 @@ class Game {
     this.tick = 0;
 
     this.audio = new Audio("audio/starwarslarga.mp3");
+    //this.audiogo = new AudioGO ("audio/gameover.mp3");
 
     this.setUpHearts(3)
   }
@@ -138,6 +139,17 @@ class Game {
     this.clear();
     this.draw();
     this.stop();
+
+    //this.audiogo.play();
+    //this.audiogo.volume = 0.2
+
+    this.ctx.font = "60px Roboto";
+    this.ctx.strokeStyle = 'Red';
+    this.ctx.fillText(
+      "GAME OVER",
+      this.ctx.canvas.width * 0.3,
+      this.ctx.canvas.height / 2
+    );
 
     this.enemies = [];
   }
