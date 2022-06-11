@@ -16,39 +16,39 @@ class Game {
     this.tick = 0;
 
     this.audio = new Audio("audio/starwarslarga.mp3");
-    this.audiogo = new Audio ("audio/gameover.mp3");
+    this.audiogo = new Audio("audio/gameover.mp3");
     this.audioPain = new Audio("audio/ouch.wav");
 
-    this.setUpHearts(3)
+    this.setUpHearts(3);
   }
 
   start() {
-    if (!this.interval){
-        this.audio.play();
-        this.audio.volume = 0.2
+    if (!this.interval) {
+      this.audio.play();
+      this.audio.volume = 0.2;
 
-        this.interval = setInterval(() => {
-          this.clear();
-          this.draw();
-          this.move();
-          this.checkCollisions();
-          this.tick++;
-    
-          if (this.tick > Math.random() * 200 + 100) {
-            this.tick = 0;
-            this.addEnemy();
-          }
-    
-          if (this.tick > Math.random() * 200 + 100) {
-            this.tick = 0;
-            this.addEnemy2();
-          }
-    
-          if (this.tick > Math.random() * 200 + 100) {
-            this.tick = 0;
-            this.addEnemy3();
-          }
-        }, 1000 / 60);
+      this.interval = setInterval(() => {
+        this.clear();
+        this.draw();
+        this.move();
+        this.checkCollisions();
+        this.tick++;
+
+        if (this.tick > Math.random() * 200 + 100) {
+          this.tick = 0;
+          this.addEnemy();
+        }
+
+        if (this.tick > Math.random() * 200 + 100) {
+          this.tick = 0;
+          this.addEnemy2();
+        }
+
+        if (this.tick > Math.random() * 200 + 100) {
+          this.tick = 0;
+          this.addEnemy3();
+        }
+      }, 1000 / 60);
     }
   }
 
@@ -84,7 +84,6 @@ class Game {
     this.hearts.forEach((e) => e.draw());
     this.score.draw();
     //pintar el score, draw text
-    
   }
 
   move() {
@@ -107,37 +106,37 @@ class Game {
   checkCollisions() {
     this.enemies.forEach((enemy) => {
       if (enemy.collides(this.player)) {
-        enemy.alive = false
-        this.hearts.pop()
+        enemy.alive = false;
+        this.hearts.pop();
         this.audioPain.play();
-        this.audioPain.volume = 0.5
-        if (this.hearts.length === 0){
-            this.gameOver()
+        this.audioPain.volume = 0.5;
+        if (this.hearts.length === 0) {
+          this.gameOver();
         }
-
-      } 
+      }
     });
 
     this.enemies.forEach((enemy) => {
-        this.player.bullets = this.player.bullets.filter(bullet => {
-            if (bullet.collides(enemy)){
-                enemy.alive = false
-                this.UpdateScore()
-                return false 
-            }else{
-                return true
-            }
-        } )
-     
+      this.player.bullets = this.player.bullets.filter((bullet) => {
+        if (bullet.collides(enemy)) {
+          enemy.alive = false;
+          this.UpdateScore();
+          return false;
+        } else {
+          return true;
+        }
+      });
     });
   }
 
-  UpdateScore(){
-    this.score.value += 100
+  UpdateScore() {
+    this.score.value += 100;
   }
 
   gameOver() {
     clearInterval(this.interval);
+    //actualizar vidas??
+    this.setUpHearts(3);
 
     this.clear();
     this.draw();
@@ -148,7 +147,7 @@ class Game {
     //this.audiogo.volume = 0.4
 
     this.ctx.font = "60px Roboto";
-    this.ctx.strokeStyle = 'Red';
+    this.ctx.strokeStyle = "Red";
     this.ctx.fillText(
       "GAME OVER",
       this.ctx.canvas.width * 0.3,
@@ -159,9 +158,8 @@ class Game {
   }
 
   setUpHearts(numberOfHearts) {
-    for (let i = 1; i <= numberOfHearts; i++){
-        this.hearts.push(new Heart(this.ctx, this.ctx.canvas.width - 60 * i, 20))
+    for (let i = 1; i <= numberOfHearts; i++) {
+      this.hearts.push(new Heart(this.ctx, this.ctx.canvas.width - 55 * i, 20));
     }
-    
   }
 }
