@@ -26,6 +26,8 @@ class Game {
     if (!this.interval) {
       this.audio.play();
       this.audio.volume = 0.2;
+      //como empezar con el score a 0
+      //this.score.value = 0;
 
       this.interval = setInterval(() => {
         this.clear();
@@ -136,12 +138,12 @@ class Game {
   gameOver() {
     clearInterval(this.interval);
     //actualizar vidas??
-    this.setUpHearts(3);
+    //this.setUpHearts(3);
 
     this.clear();
     this.draw();
     this.stop();
-    this.score.value = 0;
+    //this.score.value = 0;
 
     this.audiogo.play();
     //this.audiogo.volume = 0.4
@@ -149,12 +151,12 @@ class Game {
     this.ctx.font = "60px Roboto";
     this.ctx.strokeStyle = "Red";
     this.ctx.fillText(
-      "GAME OVER",
-      this.ctx.canvas.width * 0.3,
+        `GAME OVER ${this.score.value}`,
+      this.ctx.canvas.width * 0.24,
       this.ctx.canvas.height / 2
     );
 
-    this.enemies = [];
+    //this.enemies = [];
   }
 
   setUpHearts(numberOfHearts) {
