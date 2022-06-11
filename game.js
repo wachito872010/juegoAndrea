@@ -6,7 +6,7 @@ class Game {
     this.player = new Player(ctx);
     this.bg = new Background(ctx);
     this.hearts = [];
-    this.score = 0;
+    this.score = new Score(ctx);
 
     this.enemies = [];
 
@@ -80,7 +80,9 @@ class Game {
     this.player.draw();
     this.enemies.forEach((e) => e.draw());
     this.hearts.forEach((e) => e.draw());
+    this.score.draw();
     //pintar el score, draw text
+    
   }
 
   move() {
@@ -116,13 +118,18 @@ class Game {
         this.player.bullets = this.player.bullets.filter(bullet => {
             if (bullet.collides(enemy)){
                 enemy.alive = false
-                return false  
+                this.UpdateScore()
+                return false 
             }else{
                 return true
             }
         } )
      
     });
+  }
+
+  UpdateScore(){
+    this.score.value += 100
   }
 
   gameOver() {
