@@ -16,6 +16,18 @@ btn.addEventListener("click", function () {
     btn.innerText = "STOP";
   }
 }
-
-
 );
+
+/*btn.addEventListener('click', function(){
+  document.querySelector(".panel-menu")
+  if (game.interval){
+      game.stop()
+      btn.innerText = 'START'
+  } else {
+      game.start()
+      btn.innerText = 'PAUSE'
+  }
+}
+); */
+
+

@@ -165,5 +165,9 @@ class Game {
     }
   }
 
+  pause(){
+      this.stop();
+  }
+
 
 }
