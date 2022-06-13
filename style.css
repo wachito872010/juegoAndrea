@@ -95,7 +95,7 @@ button:after {
 }
 
 .panel-menu h1{
-    Font-family: Arial;
+    Font-family: Impact;
     font-weight: bold;
     font-size: 70px;
     color: rgb(255, 50, 50);
@@ -103,7 +103,7 @@ button:after {
 }
 
 .panel-menu h2{
-    Font-family: Arial;
+    Font-family: Impact;
     font-weight: bold;
     font-size: 30px;
     color: rgb(255, 166, 0);
