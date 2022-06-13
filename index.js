@@ -22,7 +22,7 @@ btn.addEventListener("click", function () {
   document.querySelector(".panel-canvas")
   if (game.interval){
       game.stop()
-      btn.innerText = 'START'
+      btn.innerText = 'PAUSE'
   } else {
       game.start()
       btn.innerText = 'PAUSE'
