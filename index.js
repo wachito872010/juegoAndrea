@@ -13,7 +13,7 @@ btn.addEventListener("click", function () {
     btn.innerText = "START";
   } else {
     game.start();
-    btn.innerText = "STOP";
+    btn.innerText = "PAUSE";
   }
 }
 );
