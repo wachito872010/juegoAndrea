@@ -19,7 +19,7 @@ btn.addEventListener("click", function () {
 );
 
 /*btn.addEventListener('click', function(){
-  document.querySelector(".panel-menu")
+  document.querySelector(".panel-canvas")
   if (game.interval){
       game.stop()
       btn.innerText = 'START'
